@@ -1,5 +1,7 @@
+
 import React, { useState, useEffect } from 'react'
 import './App.css'
+import InstallPrompt from './InstallPrompt'
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 
@@ -126,6 +128,7 @@ function App() {
   const profit = totalSales - totalExpenses
 
   return (
+
     <div className="app-container">
       {/* DARK MODE TOGGLE */}
       <button
@@ -250,5 +253,7 @@ function App() {
     </div>
   )
 }
+
+<InstallPrompt />
 
 export default App

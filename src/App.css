@@ -227,3 +227,27 @@ body, .app-container {
   --card-bg: #2a2a2a;
   --card-shadow: rgba(255, 255, 255, 0.05);
 }
+
+.install-banner {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background: #fff;
+  color: #000;
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.install-banner button {
+  margin-top: 8px;
+  background: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+}
+
