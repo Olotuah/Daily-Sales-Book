@@ -1,3 +1,5 @@
+// vite.config.js
+
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
@@ -7,13 +9,15 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
+      includeAssets: ['favicon.svg', 'favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {
         name: 'Daily Sales Book',
         short_name: 'SalesBook',
-        start_url: '/',
-        display: 'standalone',
+        description: 'Track your daily sales with ease',
+        theme_color: '#ffffff',
         background_color: '#ffffff',
-        theme_color: '#4caf50',
+        display: 'standalone',
+        start_url: '/',
         icons: [
           {
             src: 'icon-192.png',
