@@ -3,6 +3,7 @@
   "short_name": "SalesBook",
   "description": "A daily sales tracking app",
   "start_url": "/",
+  "id": "/",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "display": "standalone",
