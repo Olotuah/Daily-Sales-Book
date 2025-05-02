@@ -27,7 +27,7 @@ Clone the repository:
 bash
 Copy
 Edit
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+git clonehttps://github.com/Olotuah/Daily-Sales-Book.git
 Navigate into your project folder:
 
 bash
