@@ -22,21 +22,6 @@
       "sizes": "144x144",
       "type": "image/png"
     }
-  ],
-
-  "screenshots": [
-    {
-      "src": "/screenshot-desktop.png",  // Make sure this path is correct
-      "sizes": "1360x611",
-      "type": "image/png",
-      "form_factor": "wide"
-    },
-    {
-      "src": "/screenshot-mobile.png",  // Make sure this path is correct
-      "sizes": "470x1336",
-      "type": "image/png",
-      "form_factor": "narrow"
-    }
   ]
 
 }
