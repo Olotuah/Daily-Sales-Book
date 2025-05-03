@@ -230,24 +230,25 @@ body, .app-container {
 
 .install-banner {
   position: fixed;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
-  background: #fff;
-  color: #000;
-  padding: 16px;
-  border-radius: 10px;
+  bottom: 20px;
+  left: 10%;
+  right: 10%;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  padding: 1rem;
   text-align: center;
-  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
+  border-radius: 10px;
 }
 
 .install-banner button {
-  margin-top: 8px;
-  background: #007bff;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
   color: white;
-  padding: 8px 16px;
   border: none;
   border-radius: 6px;
+  margin-top: 10px;
 }
+
 

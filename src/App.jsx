@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react'
 import './App.css'
+import AddToHomeScreenPrompt from './components/AddToHomeScreenPrompt'
 import InstallPrompt from './InstallPrompt'
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
@@ -133,6 +134,9 @@ function App() {
 
     {/* Install prompt banner */}
     <InstallPrompt />
+
+     {/* Add the banner component here so it's global */}
+      <AddToHomeScreenPrompt />
 
       {/* DARK MODE TOGGLE */}
       <button
