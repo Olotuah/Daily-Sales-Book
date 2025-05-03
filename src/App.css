@@ -93,7 +93,7 @@ body {
 
 /* Applying digital font style to summary values */
 .digital-text {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'manrope', cursive;
   font-size: 1.5rem;
   letter-spacing: 1px;
   text-align: center;
