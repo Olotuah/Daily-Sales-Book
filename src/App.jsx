@@ -130,6 +130,10 @@ function App() {
   return (
 
     <div className="app-container">
+
+    {/* Install prompt banner */}
+    <InstallPrompt />
+
       {/* DARK MODE TOGGLE */}
       <button
         className="dark-toggle"
@@ -254,6 +258,6 @@ function App() {
   )
 }
 
-<InstallPrompt />
+
 
 export default App
