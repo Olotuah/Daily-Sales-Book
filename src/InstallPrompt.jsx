@@ -1,4 +1,3 @@
-// InstallPrompt.jsx
 import React, { useEffect, useState } from 'react'
 
 function InstallPrompt() {
@@ -23,20 +22,23 @@ function InstallPrompt() {
       const result = await deferredPrompt.userChoice
       if (result.outcome === 'accepted') {
         console.log('PWA installed')
-      } else {
-        console.log('User dismissed install')
       }
       setDeferredPrompt(null)
       setShowInstall(false)
     }
   }
 
+  const handleDismiss = () => {
+    setShowInstall(false)
+  }
+
   if (!showInstall) return null
 
   return (
     <div className="install-banner">
-      <p>📲 Install Daily Sales Book on your device</p>
-      <button onClick={handleInstall}>Install App</button>
+      <p>📲 Install Daily Sales Book</p>
+      <button onClick={handleInstall} className="install-btn">Install</button>
+      <button onClick={handleDismiss} className="dismiss-btn">✖️</button>
     </div>
   )
 }

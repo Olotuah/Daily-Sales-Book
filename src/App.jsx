@@ -157,22 +157,33 @@ function App() {
 
       {/* SUMMARY */}
       <div className="summary-card">
-        <h2>
-  {new Date(selectedDate).toLocaleDateString('en-NG', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })}
-</h2>
+  <h2>
+    {new Date(selectedDate).toLocaleDateString('en-NG', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    })}
+  </h2>
 
+  <div className="digital-text">
+    <p>Total Sales: ₦{totalSales}</p>
+    <p>Total Expenses: ₦{totalExpenses}</p>
+    <p style={{ color: profit >= 0 ? '#00e676' : '#ff5722' }}>
+      {profit >= 0 ? 'Profit' : 'Loss'}: ₦{profit}
+    </p>
+  </div>
 
-        <p>Total Sales: ₦{totalSales}</p>
-        <p>Total Expenses: ₦{totalExpenses}</p>
-        <p style={{ color: profit >= 0 ? 'green' : 'red' }}>
-          {profit >= 0 ? 'Profit' : 'Loss'}: ₦{profit}
-        </p>
-      </div>
+  {/* Adding progress bar to indicate sales vs expenses */}
+  <div className="progress-bar-container">
+    <div
+      className="progress-bar"
+      style={{
+        width: totalSales > 0 ? `${(totalSales / (totalSales + totalExpenses)) * 100}%` : '0%'
+      }}
+      />
+  </div>
+</div>
 
       {/* SALE FORM */}
       <div className="form-section">

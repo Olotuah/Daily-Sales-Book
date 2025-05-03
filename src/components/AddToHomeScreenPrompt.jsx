@@ -1,59 +1,44 @@
-// AddToHomeScreenPrompt.jsx
 import React, { useEffect, useState } from 'react'
 
+// Detect iOS devices: iPhone, iPad, iPod (any browser)
 function isIOS() {
-  return /iphone|ipad|ipod/i.test(window.navigator.userAgent)
+  return /iphone|ipad|ipod/i.test(window.navigator.userAgent.toLowerCase())
 }
 
+// Check if app is already installed (standalone mode)
 function isInStandaloneMode() {
-  return 'standalone' in window.navigator && window.navigator.standalone
+  return (
+    'standalone' in window.navigator && window.navigator.standalone
+  ) || window.matchMedia('(display-mode: standalone)').matches
 }
 
-function AddToHomeScreenPrompt() {
-  const [deferredPrompt, setDeferredPrompt] = useState(null)
-  const [showPrompt, setShowPrompt] = useState(false)
-  const [isIOSDevice, setIsIOSDevice] = useState(false)
+const AddToHomeScreenPrompt = () => {
+  const [shouldShow, setShouldShow] = useState(false)
 
   useEffect(() => {
-    const isiOS = isIOS() && !isInStandaloneMode()
-    setIsIOSDevice(isiOS)
-
-    const handler = (e) => {
-      e.preventDefault()
-      setDeferredPrompt(e)
-      setShowPrompt(true)
+    if (isIOS() && !isInStandaloneMode()) {
+      setShouldShow(true)
     }
-
-    window.addEventListener('beforeinstallprompt', handler)
-
-    return () => window.removeEventListener('beforeinstallprompt', handler)
   }, [])
 
-  const handleInstallClick = async () => {
-    if (deferredPrompt) {
-      deferredPrompt.prompt()
-      const { outcome } = await deferredPrompt.userChoice
-      console.log(outcome === 'accepted' ? 'App installed' : 'Install dismissed')
-      setDeferredPrompt(null)
-      setShowPrompt(false)
-    }
-  }
-
-  if (!showPrompt && !isIOSDevice) return null
+  if (!shouldShow) return null
 
   return (
-    <div className="install-banner">
-      {isIOSDevice ? (
-        <div>
-          <p>To add this app to your home screen:</p>
-          <p><strong>Tap the Share icon</strong> in Safari and then <strong>“Add to Home Screen”</strong>.</p>
-        </div>
-      ) : (
-        <div>
-          <p>Install this app on your device:</p>
-          <button onClick={handleInstallClick}>Add to Home Screen</button>
-        </div>
-      )}
+    <div style={{
+      position: 'fixed',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      backgroundColor: '#fff8e1',
+      padding: '12px',
+      textAlign: 'center',
+      zIndex: 9999,
+      borderTop: '1px solid #ccc'
+    }}>
+      <p>
+        📲 To install this app: <strong>Tap the Share icon</strong> in your browser
+        and then choose <strong>“Add to Home Screen”</strong>.
+      </p>
     </div>
   )
 }
