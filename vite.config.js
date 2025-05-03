@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt',
       includeAssets: ['favicon.svg', 'favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {
         name: 'Daily Sales Book',
@@ -25,7 +25,7 @@ export default defineConfig({
       "type": "image/png"
     },
     {
-      "src": "/icon-192png",
+      "src": "/icon-192.png",
       "sizes": "512x512",
       "type": "image/png"
     },
